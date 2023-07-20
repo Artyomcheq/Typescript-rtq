@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import AlbumCard from './components/albumCard/AlbumCard';
+import Header from './components/header/Header';
+import PostsCard from './components/postsCard/PostsCard';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <Header />
+      </div>
+      <Routes>
+        <Route path='/' element={<PostsCard />}/>
+        <Route path='/album' element={<AlbumCard />}/>
+      </Routes>
+    </>
   );
 }
 
