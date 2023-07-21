@@ -12,7 +12,7 @@ const Header: FC = () => {
                         <div className={s.header_nav}>
                             <NavLink to={"/"}>Посты</NavLink >
                             <NavLink to={"/album"}>Фото</NavLink >
-                            <NavLink to={"/album"}>Задачи</NavLink >
+                            <NavLink to={"/todo"}>Задачи</NavLink >
                         </div>
                     </div>
                 </div>

@@ -1,34 +1,34 @@
-import { IPost } from "../../models/models";
+import { IPost, ITodos } from "../../models/models";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-interface PostState {
-    posts: IPost[];
+interface TodoState {
+    todos: ITodos[];
     isLoading: boolean;
     error: string;
 }
 
-const initialState: PostState = {
-    posts: [],
+const initialState: TodoState = {
+    todos: [],
     isLoading: false,
     error: '',
 }
 
 export const postSlice = createSlice({
-    name: 'post',
+    name: 'posts',
     initialState,
     reducers: {
         postsFetching(state) {
             state.isLoading = true
         },
-        postsFetchingSuccsess(state, action: PayloadAction<IPost[]>) {
+        postsFetchingSuccsess(state, action: PayloadAction<ITodos[]>) {
             state.isLoading = false
             state.error = ""
-            state.posts = action.payload
+            state.todos = action.payload
         },
         postsFetchingError(state, action: PayloadAction<string>) {
             state.isLoading = false
             state.error = action.payload
-            
+
         },
     }
 })

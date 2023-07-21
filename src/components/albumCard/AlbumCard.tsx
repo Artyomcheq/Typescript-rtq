@@ -45,6 +45,7 @@ const AlbumCard: FC = () => {
           <div className={s.albums_card} key={album.id}>
             <p>{album.id}. {album.title}</p>
             <button onClick={() => deleteAlbum(album.id)}>Удалить</button>
+            <button>Перейти</button>
           </div>
         ))}
       </div>
